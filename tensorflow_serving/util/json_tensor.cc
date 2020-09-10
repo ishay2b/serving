@@ -558,7 +558,7 @@ Status FillTensorMapFromInstancesList(
         return errors::InvalidArgument(
             "Failed to process element: ", tensor_count,
             " of 'instances' list. JSON object: ", JsonValueToString(elem),
-            " keys must be equal to: ", absl::StrJoin(input_names, ","));
+            " keys must be equal to: ", absl::StrJoin(input_names, ","), "while expecting:", absl::StrJoin(object_keys, ","));
       }
     } else {
       if (IsElementObject(elem)) {
